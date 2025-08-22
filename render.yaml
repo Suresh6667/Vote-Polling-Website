@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: realtime-polling-app
+    env: node
+    plan: free
+    region: singapore # you can change: oregon, frankfurt, etc.
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: CLIENT_URL
+        value: https://realtime-polling-app.onrender.com
+      - key: DB_PATH
+        value: /data/polls.db
+    disk:
+      name: polls-db
+      mountPath: /data
+      sizeGB: 1
