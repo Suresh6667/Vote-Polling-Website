@@ -176,7 +176,7 @@ class PollService {
   generateInsight(poll, results) {
     const { total, choices, percentages } = results;
     
-    if (total < 2) {
+    if (total < 20) {
       return null;
     }
 

@@ -111,7 +111,7 @@ router.post('/polls/:id/vote', async (req, res) => {
     
     // Generate insight if we have enough votes
     let insight = null;
-    if (results.total >= 2) {
+    if (results.total >= 20) {
       insight = pollService.generateInsight(poll, results);
     }
 
